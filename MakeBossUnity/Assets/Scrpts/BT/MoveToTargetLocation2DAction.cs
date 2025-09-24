@@ -78,10 +78,5 @@ public partial class MoveToTargetLocation2DAction : Action
         }
     }
 
-    // Success 이후에 실행되는 함수 
-    //protected override void OnEnd()
-    //{
-
-    //}
 }
 

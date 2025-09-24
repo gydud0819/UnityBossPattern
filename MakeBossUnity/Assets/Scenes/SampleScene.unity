@@ -354,6 +354,8 @@ GameObject:
   - component: {fileID: 786006414}
   - component: {fileID: 786006413}
   - component: {fileID: 786006415}
+  - component: {fileID: 786006416}
+  - component: {fileID: 786006417}
   m_Layer: 0
   m_Name: Mushroom
   m_TagString: Untagged
@@ -483,6 +485,8 @@ MonoBehaviour:
   - rid: 8359078337079673123
   - rid: 8359078337079673244
   - rid: 8359078359770857623
+  - rid: 8359078382164771143
+  - rid: 8359078382164771537
   m_IsInitialised: 0
   m_IsStarted: 0
   references:
@@ -520,6 +524,22 @@ MonoBehaviour:
           m_Value1: 13693031636475398249
         Name: Speed
         m_Value: 2
+    - rid: 8359078382164771143
+      type: {class: 'BlackboardVariable`1[[ActionBehavior, Assembly-CSharp]]', ns: Unity.Behavior, asm: Unity.Behavior}
+      data:
+        GUID:
+          m_Value0: 383541286060906289
+          m_Value1: 14809105618670019406
+        Name: Attack1
+        m_Value: {fileID: 786006416}
+    - rid: 8359078382164771537
+      type: {class: 'BlackboardVariable`1[[MushroomAttack2, Assembly-CSharp]]', ns: Unity.Behavior, asm: Unity.Behavior}
+      data:
+        GUID:
+          m_Value0: 11776517523435350288
+          m_Value1: 18213032401005002905
+        Name: Attack2
+        m_Value: {fileID: 786006417}
 --- !u!50 &786006415
 Rigidbody2D:
   serializedVersion: 5
@@ -547,6 +567,38 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &786006416
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 786006409}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7af1e1e4972407742893d0b9c0dbe5bb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  IsPatternEnd: 0
+  waitTimeForCharging: 1
+  projectilePrefab: {fileID: 4052340349359184683, guid: ee1ad7190deef8d419cd053ac30b59bc, type: 3}
+  projectileRange: 180
+  repeatCount: 2
+  RightAngle: -60
+  LeftAngle: 120
+--- !u!114 &786006417
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 786006409}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 80c2a86d47ee7ad4388cd53e2a8dbf90, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  IsPatternEnd: 0
 --- !u!1 &1385428610
 GameObject:
   m_ObjectHideFlags: 0
@@ -765,7 +817,7 @@ Transform:
   m_GameObject: {fileID: 2032531548}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.1, y: -0.42, z: 0}
+  m_LocalPosition: {x: -5.07, y: -0.15, z: 0}
   m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -852,7 +904,7 @@ MonoBehaviour:
   groundMask:
     serializedVersion: 2
     m_Bits: 64
-  groundCheckDistance: 0.75
+  groundCheckDistance: 1
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
