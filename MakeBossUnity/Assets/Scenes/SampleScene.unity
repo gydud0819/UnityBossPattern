@@ -467,6 +467,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd98389ff7481284d9e88eb6c01b5c95, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  MaxHP: 100
+  <CurrentHP>k__BackingField: 0
 --- !u!114 &786006414
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -487,6 +489,8 @@ MonoBehaviour:
   - rid: 8359078359770857623
   - rid: 8359078382164771143
   - rid: 8359078382164771537
+  - rid: 8359078405043389054
+  - rid: 8359078405043389055
   m_IsInitialised: 0
   m_IsStarted: 0
   references:
@@ -540,6 +544,23 @@ MonoBehaviour:
           m_Value1: 18213032401005002905
         Name: Attack2
         m_Value: {fileID: 786006417}
+    - rid: 8359078405043389054
+      type: {class: 'BlackboardVariable`1[[System.Collections.Generic.List`1[[UnityEngine.GameObject, UnityEngine.CoreModule]], mscorlib]]', ns: Unity.Behavior, asm: Unity.Behavior}
+      data:
+        GUID:
+          m_Value0: 10173866908803766815
+          m_Value1: 8278984328233328516
+        Name: StopActions
+        m_Value:
+        - {fileID: 786006409}
+    - rid: 8359078405043389055
+      type: {class: 'BlackboardVariable`1[[BossState, Assembly-CSharp]]', ns: Unity.Behavior, asm: Unity.Behavior}
+      data:
+        GUID:
+          m_Value0: 6380864821417060855
+          m_Value1: 14035776711059426511
+        Name: BossState
+        m_Value: 0
 --- !u!50 &786006415
 Rigidbody2D:
   serializedVersion: 5

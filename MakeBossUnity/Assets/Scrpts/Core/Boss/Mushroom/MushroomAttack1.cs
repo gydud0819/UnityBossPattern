@@ -5,6 +5,8 @@ public class MushroomAttack1 : ActionBehavior
 {
     Transform target;
     Animator animator;
+    SpriteRenderer spriteRenderer;
+
     [SerializeField] float waitTimeForCharging = 1f;            //  기 모으는 시간
     [SerializeField] GameObject projectilePrefab;               // 투사체
     [SerializeField] float projectileRange = 180f;              // 투사체가 발사하는 각도
@@ -16,9 +18,11 @@ public class MushroomAttack1 : ActionBehavior
     private void Awake()
     {
         animator = GetComponent<Animator>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
     }
     public override void OnStart()
     {
+        IsPatternEnd = false;
         StartCoroutine(ChargingPattern());
 
     }
@@ -26,13 +30,23 @@ public class MushroomAttack1 : ActionBehavior
     public override void OnUpdate()
     {
         // 플레이어의 현재 위치 방향으로 flip하는 코드 쓰기 
-
+        GameObject player = GameObject.FindGameObjectWithTag("Player");
+        if(transform.position.x < player.transform.position.x)
+        {
+            spriteRenderer.flipX = true;
+        }
+        else
+        {
+            spriteRenderer.flipX= false;
+        }
 
     }
 
-    public override void OnEnd()
+    public override void OnStop()
     {
         // 패턴을 시작할 때 초기화 해야하는 패턴이 있다면 OnEnd에서 설정한다.
+        StartCoroutine(ChargingPattern());
+        base.OnStop();
     }
 
     IEnumerator ChargingPattern()
@@ -93,6 +107,11 @@ public class MushroomAttack1 : ActionBehavior
         {
             return LeftAngle;
         }
+    }
+
+    public override void OnEnd()
+    {
+        
     }
 }
 
