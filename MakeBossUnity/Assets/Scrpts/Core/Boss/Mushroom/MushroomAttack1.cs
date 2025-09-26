@@ -45,7 +45,7 @@ public class MushroomAttack1 : ActionBehavior
     public override void OnStop()
     {
         // 패턴을 시작할 때 초기화 해야하는 패턴이 있다면 OnEnd에서 설정한다.
-        StartCoroutine(ChargingPattern());
+        StopCoroutine(ChargingPattern());
         base.OnStop();
     }
 
